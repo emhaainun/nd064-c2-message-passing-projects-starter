@@ -1,0 +1,11 @@
+Architecture Design Decisions
+=================================
+
+In this architecture design, there are three message passing techniques were adopted, namely:
+- gRPC
+- Message Queues (Kafka)
+- REST APIs
+
+End User coordinates sent by mobile devices that established using gRPC.  The choice was made to leverage on the improved performance provided by gRPC with regards to reduction in overall payload sizes and connection overhead.  This will aid in ensuring that our solution can handle the large volume of location data that will sent from numerous mobile devices.
+All the location data produces will be received by Message Queues (Kafka) and location services will store it to database PostgreSQL.
+The frontend client leverages REST APIs to enable integration with the various HTTP routes. REST was chosen because it is the most straightforward form of message passing that does not introduce unnecessary complexity into our solution, and it gives a relatively high thorughput in API performance.
