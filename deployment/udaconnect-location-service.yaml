@@ -31,7 +31,7 @@ spec:
         app: udaconnect-location-service
     spec:
       containers:
-      - image: lutfieff/udaconnect-location-service:v2.0
+      - image: emhaainun/location-service:latest
         name: udaconnect-location-service
         imagePullPolicy: Always
         env:
